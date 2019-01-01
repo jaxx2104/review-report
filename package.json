@@ -4,15 +4,26 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "rollup --config",
+    "build": "rollup -c",
+    "develop": "rollup -c -w",
+    "format": "prettier --write './**/*.js'",
+    "lint": "eslint --fix '**/*.js'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.2.3",
+    "axios": "^0.18.0",
+    "dotenv": "^6.2.0",
     "eslint": "^5.11.1",
+    "eslint-config-prettier": "^3.3.0",
     "eslint-plugin-prettier": "^3.0.1",
     "prettier": "^1.15.3",
-    "rollup": "^1.0.0"
+    "rollup": "^1.0.0",
+    "rollup-plugin-babel": "^4.2.0",
+    "rollup-plugin-commonjs": "^9.2.0",
+    "rollup-plugin-node-resolve": "^4.0.0"
   }
 }
