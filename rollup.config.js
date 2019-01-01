@@ -14,6 +14,9 @@ export default {
       browser: true
     }),
     commonjs(),
-    babel()
+    babel({
+      runtimeHelpers: true,
+      exclude: 'node_modules/**'
+    })
   ]
 }
