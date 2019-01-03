@@ -1,12 +1,12 @@
 {
-  "name": "review-report",
-  "version": "1.0.0",
+  "name": "warsman",
+  "version": "0.1.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/bundle.js",
   "scripts": {
     "build": "rollup -c",
     "develop": "rollup -c -w",
-    "format": "prettier --write './**/*.js'",
+    "format": "prettier --write './**/*.{js,json,md}'",
     "lint": "eslint --fix '**/*.js'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -18,15 +18,20 @@
     "@babel/preset-env": "^7.2.3",
     "@babel/runtime": "^7.2.0",
     "axios": "^0.18.0",
-    "console.table": "^0.10.0",
+    "chalk": "^2.4.1",
+    "commander": "^2.19.0",
     "dotenv": "^6.2.0",
     "eslint": "^5.11.1",
     "eslint-config-prettier": "^3.3.0",
     "eslint-plugin-prettier": "^3.0.1",
+    "figlet": "^1.2.1",
     "prettier": "^1.15.3",
     "rollup": "^1.0.0",
     "rollup-plugin-babel": "^4.2.0",
     "rollup-plugin-commonjs": "^9.2.0",
     "rollup-plugin-node-resolve": "^4.0.0"
+  },
+  "bin": {
+    "warsman": "dist/bundle.js"
   }
 }

@@ -6,13 +6,12 @@ export default {
   external: ['path'],
   input: 'src/main.js',
   output: {
+    banner: '#!/usr/bin/env node',
     file: 'dist/bundle.js',
     format: 'umd'
   },
   plugins: [
-    resolve({
-      browser: true
-    }),
+    resolve(),
     commonjs(),
     babel({
       runtimeHelpers: true,
