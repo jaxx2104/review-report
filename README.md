@@ -9,12 +9,35 @@ _warsman is the silent hero._
 ## Install
 
 ```
+$ npm install warsman
+or
 $ npm install -g warsman
 ```
 
 ## Usage
 
-### Table mode
+### JavaScript API
+
+```js
+import warsman from "warsman"
+
+warsman({
+  baseURL: 'https://api.github.com/',
+  repository: 'facebook/react',
+  token: 'XXXXXXXXXX',
+  max: 10
+}).then(results => {
+  console.log(results)
+  // [ { user: 'jaxx2104', count: 26 },
+  // { user: 'foo', count: 23 },
+  // { user: 'bar', count: 19 } ]
+})
+```
+
+
+### Command Line Interface
+
+**Table mode**
 
 ```
 $ warsman --repo facebook/react --token XXXXXXXXXX
@@ -32,7 +55,7 @@ result
 └─────────┴────────────┴───────┘
 ```
 
-### Figlet mode
+**Figlet mode**
 
 ```
 $ warsman --repo facebook/react --token XXXXXXXXXX --figlet Slant
