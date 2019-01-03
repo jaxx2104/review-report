@@ -80,5 +80,6 @@ typings/
 .dynamodb/
 
 # custom
+bin
 dist
 .DS_Store
