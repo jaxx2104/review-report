@@ -50,11 +50,12 @@ result
 ```
 
 ## Options
-| option | description |
-----|---- 
-| -V, --version | output the version number |
-| --u, --url <url> | GitHub API URL (default: "https://api.github.com/") |
-| -r, --repo <account/repo> | GitHub Repository |
-| -t, --token <token> | GitHub Personal Access Token |
-| --max <n> | GitHub Max PullRequests |
-| --figlet <font> | figlet mode |
+
+| option                    | description                                         |
+| ------------------------- | --------------------------------------------------- |
+| -V, --version             | output the version number                           |
+| --u, --url <url>          | GitHub API URL (default: "https://api.github.com/") |
+| -r, --repo <account/repo> | GitHub Repository                                   |
+| -t, --token <token>       | GitHub Personal Access Token                        |
+| --max <n>                 | GitHub Max PullRequests                             |
+| --figlet <font>           | figlet mode                                         |
