@@ -1,6 +1,6 @@
 {
   "name": "warsman",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Displays the most contributing silent hero in the code review",
   "main": "dist/bundle.js",
   "bin": {
@@ -9,7 +9,7 @@
   "scripts": {
     "build": "rollup -c",
     "develop": "rollup -c -w",
-    "format": "prettier --write './**/*.{js,json,md}'",
+    "format": "prettier --write './**/*.{js,ts,json,md}'",
     "lint": "eslint --fix '**/*.js'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -26,6 +26,7 @@
   ],
   "author": "jaxx2104",
   "dependencies": {
+    "@types/lodash": "^4.14.120",
     "axios": "^0.18.0",
     "chalk": "^2.4.1",
     "commander": "^2.19.0",
@@ -36,6 +37,10 @@
     "@babel/plugin-transform-runtime": "^7.2.0",
     "@babel/preset-env": "^7.2.3",
     "@babel/runtime": "^7.2.0",
+    "@typescript-eslint/eslint-plugin": "^0.2.1",
+    "@typescript-eslint/parser": "^0.2.1",
+    "@typescript-eslint/typescript-estree": "^1.1.1",
+    "babel-eslint": "^10.0.1",
     "eslint": "^5.11.1",
     "eslint-config-prettier": "^3.3.0",
     "eslint-plugin-prettier": "^3.0.1",
@@ -43,6 +48,10 @@
     "rollup": "^1.0.0",
     "rollup-plugin-babel": "^4.2.0",
     "rollup-plugin-commonjs": "^9.2.0",
-    "rollup-plugin-node-resolve": "^4.0.0"
+    "rollup-plugin-json": "^3.1.0",
+    "rollup-plugin-node-resolve": "^4.0.0",
+    "rollup-plugin-typescript": "^1.0.0",
+    "tslib": "^1.9.3",
+    "typescript": "^3.2.4"
   }
 }
