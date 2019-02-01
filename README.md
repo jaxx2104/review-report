@@ -2,7 +2,7 @@
 
 [![NPM Version](http://img.shields.io/npm/v/warsman.svg?style=flat)](https://www.npmjs.org/package/warsman)
 
-Displays the most contributing silent hero in the code review.
+Report the most contributor in the code review.
 
 ![warsman](https://blogs.c.yimg.jp/res/blog-8d-e6/saranndonn/folder/1835128/84/66599984/img_0)
 
