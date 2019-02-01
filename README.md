@@ -1,6 +1,7 @@
 # warsman
 
 [![NPM Version](http://img.shields.io/npm/v/warsman.svg?style=flat)](https://www.npmjs.org/package/warsman)
+[![CircleCI](https://circleci.com/gh/jaxx2104/warsman/tree/develop.svg?style=svg)](https://circleci.com/gh/jaxx2104/warsman/tree/develop)
 
 Report the most contributor in the code review.
 
