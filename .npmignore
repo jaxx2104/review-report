@@ -22,7 +22,11 @@ yarn-error.log*
 
 # config
 .babelrc
+.circleci
+.editorconfig
+.eslintrc.js
 .prettierrc
 dist/.gitkeep
 jsconfig
 rollup.config
+tsconfig.json
