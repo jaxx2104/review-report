@@ -6,7 +6,7 @@ import json from 'rollup-plugin-json'
 
 const plugins = [
   json(),
-  resolve(),
+  resolve({ browser: true }),
   typescript({ module: 'CommonJS' }),
   commonjs({ extensions: ['.js', '.ts'] }),
   babel({
