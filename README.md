@@ -21,21 +21,21 @@ $ npm install -g warsman
 ### JavaScript API
 
 ```js
-import warsman from "warsman"
+import warsman from 'warsman'
 
-warsman({
-  baseURL: 'https://api.github.com/',
-  repository: 'facebook/react',
-  token: 'XXXXXXXXXX',
+const repo = 'facebook/react'
+const token = 'XXXXXXXXXX'
+const options = {
   max: 10
-}).then(results => {
+}
+
+warsman(repo, token, options).then(results => {
   console.log(results)
   // [ { user: 'jaxx2104', count: 26 },
   // { user: 'foo', count: 23 },
   // { user: 'bar', count: 19 } ]
 })
 ```
-
 
 ### Command Line Interface
 

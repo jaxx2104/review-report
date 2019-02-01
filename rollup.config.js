@@ -1,10 +1,14 @@
 import resolve from 'rollup-plugin-node-resolve'
 import babel from 'rollup-plugin-babel'
 import commonjs from 'rollup-plugin-commonjs'
+import typescript from 'rollup-plugin-typescript'
+import json from 'rollup-plugin-json'
 
 const plugins = [
-  resolve(),
-  commonjs(),
+  json(),
+  resolve({ browser: true }),
+  typescript({ module: 'CommonJS' }),
+  commonjs({ extensions: ['.js', '.ts'] }),
   babel({
     runtimeHelpers: true,
     exclude: 'node_modules/**'
