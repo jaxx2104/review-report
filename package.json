@@ -4,7 +4,7 @@
   "description": "Displays the most contributing silent hero in the code review",
   "main": "dist/bundle.js",
   "bin": {
-    "warsman": "bin/warsman"
+    "warsman": "./bin/warsman"
   },
   "scripts": {
     "build": "rollup -c",
