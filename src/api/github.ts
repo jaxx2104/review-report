@@ -1,11 +1,12 @@
-const axios = require('axios').default
+const fetch = require('node-fetch')
+const qs = require('querystring')
 import * as I from '../interface/reviews'
 
-const timeout = 20000
-let repo: string
-let api: {
-  create: Function
-  get: Function
+const config = {
+  repository: '',
+  baseURL: '',
+  timeout: 20000,
+  baseParams: { access_token: '' }
 }
 
 interface InitOptions {
@@ -27,36 +28,44 @@ interface Reviews {
  */
 export const init = (options: InitOptions): void => {
   const { baseURL, token, repository } = options
-  const params = { access_token: token }
-  repo = repository
-  api = axios.create({
-    baseURL,
-    timeout,
-    params
-  })
+  config.baseParams = { access_token: token }
+  config.baseURL = baseURL
+  config.repository = repository
 }
 
 /**
  * Request PullRequests
  * @param options
  */
-export const getPullRequests = (options: Requests): Promise<I.Reviews> => {
+export const getPullRequests = (options: Requests): Promise<I.Review[]> => {
   const { max } = options
-  const url = `repos/${repo}/pulls`
+  const { baseURL, repository, baseParams } = config
+  const url = `${baseURL}repos/${repository}/pulls`
   const params = {
-    state: 'all',
-    per_page: max
+    ...baseParams,
+    ...{
+      state: 'all',
+      per_page: max
+    }
   }
-  return api.get(url, { params })
+  return fetch(`${url}?${qs.stringify(params)}`).then(
+    (res: { json: Function }) => res.json()
+  )
 }
 
 /**
  * Request Reviews
  * @param options
  */
-export const getReviews = (options: Reviews): Promise<I.Reviews> => {
+export const getReviews = (options: Reviews): Promise<I.Review[]> => {
   const { number } = options
-  const url = `repos/${repo}/pulls/${number}/reviews`
-  const params = {}
-  return api.get(url, { params })
+  const { baseURL, repository, baseParams } = config
+  const url = `${baseURL}repos/${repository}/pulls/${number}/reviews`
+  const params = {
+    ...baseParams,
+    ...{}
+  }
+  return fetch(`${url}?${qs.stringify(params)}`).then(
+    (res: { json: Function }) => res.json()
+  )
 }

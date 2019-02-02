@@ -1,4 +1,4 @@
-import * as _ from 'lodash'
+const _ = require('lodash')
 import * as I from '../interface/reviews'
 import { getPullRequests, getReviews } from '../api/github'
 
@@ -8,21 +8,25 @@ let revieweeList: string[]
  * Get reviews from multiple PullRequests
  * @param results
  */
-const getMultiReviews = (results: I.Reviews): Promise<I.Reviews[]> => {
-  const pullRequests = results.data || []
+const getMultiReviews = (results: I.Review[]): Promise<I.Review[][]> => {
+  const pullRequests = results || []
   revieweeList = pullRequests.map(({ user }) => user.login)
-  return Promise.all(pullRequests.map(({ number }) => getReviews({ number })))
+  return Promise.all(
+    pullRequests.map(({ number }) => {
+      return getReviews({ number })
+    })
+  )
 }
 
 /**
  * Filter reviews
  * @param reviewsList
  */
-const filterReviews = (reviews: I.Reviews[]): I.FormatReview[] => {
+const filterReviews = (reviews: I.Review[][]): I.FormatReview[] => {
   let reports: I.FormatReview[] = []
   reviews.forEach((result, i: number) => {
     // Remap reviews
-    const reviews = (result.data || []).map(review => {
+    const reviews = (result || []).map(review => {
       const user = review.user.login
       const state = review.state
       const date = review.submitted_at
@@ -57,8 +61,14 @@ const formatReviews = (reviews: I.FormatReview[]): I.Table[] =>
  */
 export default async (options: { max: number }) => {
   const { max } = options
-  const p = await getPullRequests({ max })
-  const r = await getMultiReviews(p)
-  const f = await filterReviews(r)
-  return await formatReviews(f)
+  try {
+    const p = await getPullRequests({ max })
+    const r = await getMultiReviews(p)
+    const filter = await filterReviews(r)
+    const format = await formatReviews(filter)
+    return format
+  } catch (e) {
+    console.error(e.message)
+    process.exit(1)
+  }
 }
