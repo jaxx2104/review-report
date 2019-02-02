@@ -12,9 +12,10 @@ module.exports = {
   root: true,
   extends: ['plugin:@typescript-eslint/recommended', 'prettier'],
   rules: {
-    '@typescript-eslint/indent': 'off',
     '@typescript-eslint/camelcase': 'off',
+    '@typescript-eslint/indent': 'off',
     '@typescript-eslint/member-delimiter-style': 'off',
+    '@typescript-eslint/no-var-requires': 'off',
     'no-console': 'off',
     'prettier/prettier': 'error'
   }
