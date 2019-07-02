@@ -36,7 +36,7 @@
     "@types/lodash": "4.14.120",
     "@typescript-eslint/eslint-plugin": "0.2.1",
     "@typescript-eslint/parser": "0.2.1",
-    "@typescript-eslint/typescript-estree": "1.1.1",
+    "@typescript-eslint/typescript-estree": "1.11.0",
     "eslint": "5.11.1",
     "eslint-config-prettier": "3.3.0",
     "eslint-plugin-prettier": "3.0.1",
