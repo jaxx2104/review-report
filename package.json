@@ -10,7 +10,8 @@
     "build": "rollup -c",
     "develop": "rollup -c -w",
     "format": "prettier --write './**/*.{js,ts,json,md}'",
-    "lint": "eslint --fix '**/*.js'",
+    "lint": "eslint --fix '**/*.ts'",
+    "release": "np",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "license": "MIT",
@@ -40,6 +41,7 @@
     "eslint": "5.11.1",
     "eslint-config-prettier": "3.3.0",
     "eslint-plugin-prettier": "3.0.1",
+    "np": "^5.0.3",
     "prettier": "1.15.3",
     "rollup": "1.0.0",
     "rollup-plugin-commonjs": "9.2.0",

@@ -13,6 +13,7 @@ module.exports = {
   extends: ['plugin:@typescript-eslint/recommended', 'prettier'],
   rules: {
     '@typescript-eslint/camelcase': 'off',
+    '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/indent': 'off',
     '@typescript-eslint/member-delimiter-style': 'off',
     '@typescript-eslint/no-var-requires': 'off',

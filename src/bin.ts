@@ -2,8 +2,8 @@ const chalk = require('chalk')
 const figlet = require('figlet')
 const program = require('commander')
 
-import getReviews from './services/getReviews'
-import { init } from './api/github'
+import * as services from './services/index'
+import * as github from './api/github'
 
 program
   .version('0.1.0')
@@ -44,8 +44,8 @@ const outputTable = results => {
 }
 
 const run = async () => {
-  init({ baseURL, token, repository })
-  const results = await getReviews({ max })
+  github.init({ baseURL, token, repository })
+  const results = await services.reward({ max })
   if (program.figlet) {
     outputFiglet(results)
   } else {

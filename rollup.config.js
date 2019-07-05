@@ -5,7 +5,7 @@ const plugins = [typescript(), commonjs()]
 
 export default [
   {
-    input: 'src/main.js',
+    input: 'src/main.ts',
     output: {
       file: 'dist/bundle.js',
       format: 'umd',
@@ -15,7 +15,7 @@ export default [
     plugins
   },
   {
-    input: 'src/bin.js',
+    input: 'src/bin.ts',
     output: {
       banner: '#!/usr/bin/env node',
       file: 'bin/warsman',
