@@ -12,7 +12,7 @@
     "format": "prettier --write './**/*.{js,ts,json,md}'",
     "lint": "eslint --fix '**/*.ts'",
     "release": "np",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 0"
   },
   "license": "MIT",
   "repository": "jaxx2104/warsman",
