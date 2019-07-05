@@ -1,6 +1,6 @@
 {
   "name": "warsman",
-  "version": "0.1.6",
+  "version": "0.2.0",
   "description": "Displays the most contributing silent hero in the code review",
   "main": "dist/bundle.js",
   "bin": {
