@@ -10,7 +10,7 @@
     "build": "rollup -c",
     "develop": "rollup -c -w",
     "format": "prettier --write './**/*.{js,ts,json,md}'",
-    "lint": "eslint --fix '**/*.js'",
+    "lint": "eslint --fix '**/*.ts'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "license": "MIT",
