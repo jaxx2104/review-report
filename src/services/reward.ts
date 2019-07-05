@@ -59,7 +59,7 @@ const formatReviews = (reviews: I.FormatReview[]): I.Table[] =>
 /**
  * Run
  */
-export default async (options: { max: number }) => {
+export const reward = async (options: { max: number }) => {
   const { max } = options
   try {
     const p = await getPullRequests({ max })
