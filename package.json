@@ -41,7 +41,7 @@
     "eslint": "5.11.1",
     "eslint-config-prettier": "3.3.0",
     "eslint-plugin-prettier": "3.0.1",
-    "np": "^5.0.3",
+    "np": "5.0.3",
     "prettier": "1.15.3",
     "rollup": "1.0.0",
     "rollup-plugin-commonjs": "9.2.0",
