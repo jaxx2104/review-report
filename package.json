@@ -43,7 +43,7 @@
     "eslint-plugin-prettier": "3.0.1",
     "np": "5.1.0",
     "prettier": "1.15.3",
-    "rollup": "1.21.2",
+    "rollup": "1.21.3",
     "rollup-plugin-commonjs": "9.2.0",
     "rollup-plugin-node-resolve": "4.0.0",
     "rollup-plugin-typescript": "1.0.0",
