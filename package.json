@@ -27,7 +27,7 @@
   ],
   "author": "jaxx2104",
   "dependencies": {
-    "chalk": "^2.4.1",
+    "chalk": "^3.0.0",
     "commander": "^3.0.0",
     "figlet": "^1.2.1",
     "lodash": "^4.17.11",
